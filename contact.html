@@ -34,16 +34,17 @@
                         <a class="nav-link" href="pastEvents.html">Past Events</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./contact.html"
-                            href="contact.html">Contact</a>
+                        <a class="nav-link active" aria-current="page" href="./contact.html">Contact</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="stats.html">Stats</a>
                     </li>
                 </ul>
             </div>
+        </div>
     </nav>
-    <main class="container-lg d-flex">
+
+    <main class="container">
 
         <div class="text-bg-light p-3 d-flex w-100">
             <div class="row d-flex justify-content-between w-100 align-items-center">
@@ -71,30 +72,31 @@
             </div>
         </div>
 
+        <div class="container">
+            <form class="row g-1 mt-3 d-flex flex-column contact justify-content-end">
+                <div class="col-5">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" id="name">
+                </div>
+                <div class="col-5">
+                    <label for="emailInput" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="emailInput">
+                </div>
+                <div class="col-5">
+                    <label for="mensagge" class="form-label">Mensagge:</label>
+                    <input type="text" class="form-control" id="mensagge">
+                </div>
+                <div class="col-5 d-flex justify-content-end g-1 mt-3 ">
+                    <button class="col-2 d-flex rounded-3 btn btn-primary" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+
 
     </main>
 
-    <div clas="container">
-        <form class="row g-1 mt-3 d-flex flex-column contact justify-content-end">
-            <div class="col-5">
-                <label for="name" class="form-label">Name:</label>
-                <input type="text" class="form-control" id="name">
-            </div>
-            <div class="col-5">
-                <label for="emailInput" class="form-label">Email:</label>
-                <input type="email" class="form-control" id="emailInput">
-            </div>
-            <div class="col-5">
-                <label for="mensagge" class="form-label">Mensagge:</label>
-                <input type="text" class="form-control" id="mensagge">
-            </div>
-            <div class="col-5 d-flex justify-content-end g-1 mt-3 ">
-                <button class="col-2 d-flex rounded-3" type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </form>
-    </div>
 
-   
+
 
     <div class="container-fluid footer">
         <div class="row p-1 text-bg-info mt-3">

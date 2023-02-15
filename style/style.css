@@ -16,8 +16,8 @@
 }
 
 .checkbox {
-    display: flex!important;
-    justify-content: space-evenly!important; 
+    display: flex !important;
+    justify-content: space-evenly !important;
 }
 
 .cardDetails {
