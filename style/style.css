@@ -14,3 +14,12 @@
 .d-flex {
     justify-content: center;
 }
+
+.checkbox {
+    display: flex!important;
+    justify-content: space-evenly!important; 
+}
+
+.cardDetails {
+    height: 65vh;
+}

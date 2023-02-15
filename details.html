@@ -25,17 +25,16 @@
             <div class="nav nav-pills collapse navbar-collapse justify-content-end" id="navbarTogglerDemo01">
                 <ul class="nav navbar-nav ml-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="./index.html">Home</a>
+                        <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./upcomingEvents.html">Upcoming Events</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pastEvents.html">Past Events</a>
+                        <a class="nav-link" href="./pastEvents.html">Past Events</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./contact.html"
-                            href="contact.html">Contact</a>
+                        <a class="nav-link" href="./contact.html">Contact</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="stats.html">Stats</a>
@@ -43,58 +42,25 @@
                 </ul>
             </div>
     </nav>
-    <main class="container-lg d-flex">
 
-        <div class="text-bg-light p-3 d-flex w-100">
-            <div class="row d-flex justify-content-between w-100 align-items-center">
-                <div class="col-md-3 text-start">
-                    <a href="pastEvents.html">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                            class="bi bi-chevron-compact-left" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M9.224 1.553a.5.5 0 0 1 .223.67L6.56 8l2.888 5.776a.5.5 0 1 1-.894.448l-3-6a.5.5 0 0 1 0-.448l3-6a.5.5 0 0 1 .67-.223z" />
-                        </svg>
-                    </a>
+    <main>
+        <div class="container d-flex justify-content-center mt-3">
+            <div class="card mb-3 cardDetails">
+                <div class="row no-gutters">
+                  <div class="col-md-4">
+                    <img src="..." class="card-img" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-md-6 text-center">
-                    <h1>Contact us</h1>
-                </div>
-                <div class="col-md-3 text-end">
-                    <a href="./stats.html">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                            class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671z" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
+              </div>
         </div>
-
-
     </main>
-
-    <div clas="container">
-        <form class="row g-1 mt-3 d-flex flex-column contact justify-content-end">
-            <div class="col-5">
-                <label for="name" class="form-label">Name:</label>
-                <input type="text" class="form-control" id="name">
-            </div>
-            <div class="col-5">
-                <label for="emailInput" class="form-label">Email:</label>
-                <input type="email" class="form-control" id="emailInput">
-            </div>
-            <div class="col-5">
-                <label for="mensagge" class="form-label">Mensagge:</label>
-                <input type="text" class="form-control" id="mensagge">
-            </div>
-            <div class="col-5 d-flex justify-content-end g-1 mt-3 ">
-                <button class="col-2 d-flex rounded-3" type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </form>
-    </div>
-
-   
 
     <div class="container-fluid footer">
         <div class="row p-1 text-bg-info mt-3">
@@ -113,8 +79,6 @@
             </div>
         </div>
     </div>
-
-
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
