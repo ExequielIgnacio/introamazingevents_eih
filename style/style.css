@@ -1,10 +1,10 @@
-.text-bg-light {
-    background-color: #AEE2FF !important;
-    height: 15vh;
+.barraNavegacion {
+    background-color: #B3005E!important;
+    border-radius: 1rem;
 }
 
 .imgFooter {
-    width: 70px;
+    width: 50px;
 }
 
 .contact {
@@ -22,4 +22,51 @@
 
 .cardDetails {
     height: 65vh;
+}
+
+body {
+    font-family: cursive;
+    color: white;
+    background-color: #060047;
+}
+
+nav {
+    background-color: #060047;
+}
+
+h1 {
+    color: white;
+}
+
+main {
+    background-color: #E90064;
+    border-radius: 1rem;
+}
+
+.mainContainer {
+    padding: 0%;
+}
+
+.card {
+    background-color: #FF5F9E;
+}
+
+.footer {
+    background-color: #060047;
+}
+
+.a-footer {
+    display: flex !important;
+}
+
+.p-footer {
+    padding-right: 3rem !important;
+}
+
+.mensagge {
+    height: 200px !important;
+}
+
+.cardDetails {
+    height: auto !important;
 }
