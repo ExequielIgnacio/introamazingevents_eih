@@ -1,5 +1,5 @@
 .barraNavegacion {
-    background-color: #B3005E!important;
+    background-color: #B3005E !important;
     border-radius: 1rem;
 }
 
@@ -20,8 +20,22 @@
     justify-content: space-evenly !important;
 }
 
-.cardDetails {
-    height: 65vh;
+.card-img-top {
+    height: 160px;
+    object-fit: cover;
+}
+
+.card-body {
+    align-content: space-between;
+}
+
+.cardDetails {}
+
+.imgDetails {
+    height: 100%;
+    object-fit: cover;
+    max-width: 100%;
+    width: 100%;
 }
 
 body {
@@ -67,6 +81,8 @@ main {
     height: 200px !important;
 }
 
-.cardDetails {
-    height: auto !important;
+.table {
+    margin-bottom: 0%;
 }
+
+@media screen and (max-width:768px) {}
