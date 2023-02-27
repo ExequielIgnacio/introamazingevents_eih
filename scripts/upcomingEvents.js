@@ -1,10 +1,10 @@
 const containerCards = document.querySelector('#container-cards')
-
+var currentDate = data.currentDate
 let cardsCreated = createCards(data.events)
 
 containerCards.innerHTML = cardsCreated
 
-var currentDate = data.currentDate
+
 
 function createCards(arrayData) {
     let cards = ''
@@ -25,4 +25,3 @@ function createCards(arrayData) {
     }
     return cards
 }
-
