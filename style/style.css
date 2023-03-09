@@ -16,8 +16,7 @@
 }
 
 .checkbox {
-    display: flex !important;
-    justify-content: space-evenly !important;
+    justify-content: space-between;
 }
 
 .card-img-top {
