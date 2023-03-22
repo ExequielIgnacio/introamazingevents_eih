@@ -28,13 +28,12 @@
     align-content: space-between;
 }
 
-.cardDetails {}
-
 .imgDetails {
     height: 100%;
     object-fit: cover;
     max-width: 100%;
     width: 100%;
+
 }
 
 body {
@@ -83,5 +82,3 @@ main {
 .table {
     margin-bottom: 0%;
 }
-
-@media screen and (max-width:768px) {}

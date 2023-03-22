@@ -1,28 +1,44 @@
-const events = data.events;
-
 const containerCards = document.getElementById("container-cards");
-const foodFairCheckbox = document.getElementById("foodFairCheckboox");
-const museumCheckbox = document.getElementById("museumCheckbox");
-const costomePartyCheckbox = document.getElementById("costumePartyCheckbox");
-const musicConcertCheckbox = document.getElementById("musicConcertCheckbox");
-const raceCheckbox = document.getElementById("raceCheckbox");
-const bookExchangeCheckbox = document.getElementById("bookExchangeCheckbox");
-const cinemaCheckbox = document.getElementById("cinemaCheckbox");
+
+const formCheckCat = document.querySelector(".form-check");
 
 const searchBar = document.getElementById("searchEvents");
+
 const searchBtn = document.getElementById("boton");
 
-createCards(events);
+let events = [];
 
-// Functions for create cards //
+dateCollection();
 
-function createCards(arrayData) {
+// date collection //
 
-    if (arrayData.length === 0) {
-        containerCards.innerHTML = `<h1>No events found, try modifying the filters</h1>`;
+function dateCollection() {
+    /*fetch('./scripts/data.js')*/
+    fetch('https://mindhub-xj03.onrender.com/api/amazing')
+        .then(response => response.json())
+        .then(data => {
+            //console.log(data); // muestra el array en la consola
+
+            events = data.events;
+            //console.log(events); // muestra el array de eventos en la consola
+
+            createCards(events, containerCards);
+
+            createCat(events);
+        })
+        .catch(error => console.log(error));
+}
+
+// functions to create cards //
+
+function createCards(arrayData, location) {
+
+    if (arrayData.length == 0) {
+        location.innerHTML = `<p class= "display-1 text-center" >No events found, try modifying the filters</p>`;
+        return false;
     }
 
-    containerCards.innerHTML = '';
+    location.innerHTML = '';
 
     let cards = ''
 
@@ -31,133 +47,76 @@ function createCards(arrayData) {
         <div class="card">
             <img src="${event.image}" class="card-img-top" alt="${event.name}">
             <div class="card-body  d-flex flex-wrap">
-                <h5 class="card-title">${event.name}</h5>
-                <p class="card-text">${event.description}</p>
+                <h5 class="card-title fw-bold text-center">${event.name}</h5>
+                <p class="card-text fw-normal">${event.description}</p>
                 <input type="button" onclick="seeDetail('${event._id}')" class="btn btn-primary" value="More info" id="button">
             </div>
         </div>
     </div>`
     }
-    containerCards.innerHTML = cards
+    location.innerHTML = cards
 }
 
-// funcion para mostrar detaills //
+// function to display details //
 
 function seeDetail(_id) {
     window.location.href = `./details.html?_id=${_id}`
 }
 
-// checkBox //
+// get categories //
 
-function mostrarCardsChecked() {
+function getCategories(arrayData) {
+    let newCat = []
 
-    const categoriesChecks = [];
-
-    if (foodFairCheckbox.checked) {
-        categoriesChecks.push('food fair');
-    }
-    if (museumCheckbox.checked) {
-        categoriesChecks.push('museum');
-    }
-    if (costomePartyCheckbox.checked) {
-        categoriesChecks.push('costume party');
-    }
-    if (musicConcertCheckbox.checked) {
-        categoriesChecks.push('music concert');
-    }
-    if (raceCheckbox.checked) {
-        categoriesChecks.push('race');
-    }
-    if (bookExchangeCheckbox.checked) {
-        categoriesChecks.push('book exchange');
-    }
-    if (cinemaCheckbox.checked) {
-        categoriesChecks.push('cinema');
-    }
-
-    const eventsFilters = events.filter(event => categoriesChecks.includes(event.category.toLocaleLowerCase()));
-    let newEventsFilters = []
-    eventsFilters.forEach(event => {
-
-        newEventsFilters.push(event)
-
-        //console.log(event);//
+    arrayData.forEach(event => {
+        newCat.push(event.category);
     });
 
-    if (newEventsFilters.length > 0) {
-        createCards(newEventsFilters.reverse());
-    } else {
-        createCards(events);
-    }
+    // delete repeat categories //
+    let newCatDelRep = new Set(newCat);
+    //console.log(newCatDelRep);//
+    return newCatDelRep;
 }
 
-foodFairCheckbox.addEventListener('change', mostrarCardsChecked);
-museumCheckbox.addEventListener('change', mostrarCardsChecked);
-costomePartyCheckbox.addEventListener('change', mostrarCardsChecked);
-musicConcertCheckbox.addEventListener('change', mostrarCardsChecked);
-raceCheckbox.addEventListener('change', mostrarCardsChecked);
-bookExchangeCheckbox.addEventListener('change', mostrarCardsChecked);
-cinemaCheckbox.addEventListener('change', mostrarCardsChecked);
+// create checkboxes //
 
-// search //
+function createCat(arrayData) {
 
-searchBtn.addEventListener("click", function (event) {
-    event.preventDefault();
-    search();
-});
+    let arrayCat = getCategories(arrayData);
+    //console.log (arrayCat)//
 
-searchBar.addEventListener("keyup", function (event) {
-    event.preventDefault();
-    search();
-});
+    let cat = '';
 
-function search() {
-    let eventsFilters = events.filter((event) => event.name.toLowerCase().includes(searchBar.value.toLowerCase()) || event.description.toLowerCase().includes(searchBar.value.toLowerCase()));
-    console.log(eventsFilters);
-    createCards(eventsFilters);
+    for (const event of arrayCat) {
+        cat += `<div class="col form-check form-check-inline">
+        <input type="checkbox" onchange="eventsFilters()" name="status" class="form-check-input category" id="${event}" value="${event}">
+        <label class="form-check-label" for="${event}">${event}</label>
+        </div>`}
+
+    formCheckCat.innerHTML = cat;
 }
 
+// show cards filtered by category and search //
 
+function eventsFilters() {
 
-/* PRIMER INTENTO
+    const search = searchBar.value.toLowerCase();
 
-//search//
+    let checkboxes = document.querySelectorAll('input[name="status"]:checked')
+    //console.log(checkboxes);//
 
-const search = document.getElementById("searchEvents");
-console.log(search);
-
-
-search.addEventListener("keyup", () => {
-    let eventsFilters = events.filter((event) => event.name.toLowerCase().includes(search.value.toLowerCase()))
-    console.log(eventsFilters);
-    createCards(eventsFilters);
-})
-
-
-//forms//
-const form = document.getElementById("form");
-
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-})
-
-
-//checkboxes//
-const boton = document.getElementById("boton");
-
-const checks = document.querySelectorAll(".category");
-
-boton.addEventListener("click", () => {
-    let checkboxes = []
-    checks.forEach((check) => {
-        if (check.checked == true) {
-            console.log(checkboxes);
-            checkboxes.push(check.id)
-        }
+    let catFilters = [];
+    checkboxes.forEach(function (input) {
+        catFilters.push(input.value)
     })
-    let dataFiltradaXCategoria = events.filter( ev=> ev.category == checkboxes)
-    console.log(dataFiltradaXCategoria);
-    createCards(dataFiltradaXCategoria);
+
+    let arrayCatCheckedYSearch = events.filter(ev => (ev.description.toLowerCase().includes(search) || ev.name.toLowerCase().includes(search)) && (catFilters.length == 0 || catFilters.includes(ev.category)))
+
+    createCards(arrayCatCheckedYSearch, containerCards);
 }
-)
-*/
+
+searchBtn.addEventListener("click",
+    eventsFilters);
+
+searchBar.addEventListener("keyup",
+    eventsFilters);
