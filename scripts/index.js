@@ -88,7 +88,7 @@ function createCat(arrayData) {
     let cat = '';
 
     for (const event of arrayCat) {
-        cat += `<div class="col form-check form-check-inline">
+        cat += `<div class="col form-check d-flex align-items-center justify-content-evenly">
         <input type="checkbox" onchange="eventsFilters()" name="status" class="form-check-input category" id="${event}" value="${event}">
         <label class="form-check-label" for="${event}">${event}</label>
         </div>`}
