@@ -69,25 +69,31 @@
             </div>
         </div>
 
-        <div class="container">
-            <div class="row p-3">
-                <div class="col-md-8 d-flex align-items-center checkbox mt-3">
-                    <input type="checkbox" name="Category" value="Category" class="col"> Category<br>
-                    <input type="checkbox" name="Category" value="Category" class="col"> Category<br>
-                    <input type="checkbox" name="Category" value="Category" class="col"> Category<br>
-                    <input type="checkbox" name="Category" value="Category" class="col"> Category<br>
-                    <input type="checkbox" name="Category" value="Category" class="col"> Category<br>
-                </div>
-                <div class="col-md-4 d-flex align-items-center mt-3">
-                    <input type="search" class="form-control col m-1" id="name">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                        class="bi bi-search m-1 text-primary" viewBox="0 0 16 16">
-                        <path
-                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                    </svg>
+        <!--CHECKBOX AND SEARCH-->
+
+        <div class="container navbar navbar-expand-lg mt-3 p-3">
+            <div class="container-fluid d-flex flex-row-reverse">
+                <form id="form" class="d-flex" role="search">
+                    <input id="searchEvents" class="form-control me-2" type="text" placeholder="Search..."
+                        aria-label="Search">
+                    <button class="btn btn-primary" id="boton"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                        </svg></button>
+                </form><button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon btn btn-primary"></span>
+                </button>
+                <div class="row collapse navbar-collapse checkbox px-2 form-check" id="navbarTogglerDemo02">
+                    <div class="form-check">
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!--CONTAINER CARDS-->
 
         <div class="container">
             <div id="container-cards" class="row mt-3 pb-3 g-3">
